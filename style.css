@@ -123,3 +123,9 @@ nav ul li a:hover, a.active{
     justify-content: space-between;
 }
 
+.button{
+    margin-top: 40px;
+    margin-left: 10px;
+    
+}
+

@@ -68,7 +68,7 @@
                     <input id="FirstClassTicket-count" class="inp-style inp-width" type="text" name="" value="1">
                 </div>
 
-                <div class="plus-minus-btn">
+                <div class="button" class="plus-minus-btn">
                     <button onclick="  handleTicketCost('FirstClassTicket',false)" class="btn btn-danger"><i
                             class="fas fa-minus">-</i></button>
 
@@ -79,7 +79,7 @@
                     <label for="">Economy($100)</label>
                     <input id="economyTicket-count" class="inp-style inp-width" type="text" name="" value="1">
                 </div>
-                <div class="plus-minus-btn">
+                <div class="button" class="plus-minus-btn">
                     <button onclick="handleTicketCost('economyTicket',false)" class="btn btn-danger"><i
                             class="fas fa-minus">-</i></button>
                     <button onclick=" handleTicketCost('economyTicket',true)" class="btn btn-success"><i
@@ -117,7 +117,7 @@
                     </div>
                 </div>
             </div>
-            <button  onclick="alertMessageHandle()"  class="btn-style">Book Now</button>
+            <button onclick="alertMessageHandle()" class="btn-style">Book Now</button>
         </div>
     </main>
 
@@ -126,12 +126,8 @@
             const FirstClassTicketCount = getInputValue('FirstClassTicket');
             const economyTicketCount = getInputValue('economyTicket');
             let ticketCount = FirstClassTicketCount + economyTicketCount;
-            document.getElementById('submit-area').value = alert (('Welcome To Your Ticket Confirmed  && Your Ticket Value: ') + ticketCount);
-
-            
+            document.getElementById('submit-area').value = alert(('Welcome To Your Ticket Confirmed  && Your Ticket Value: ') + ticketCount);
         }
-        
-        
         function handleTicketCost(ticketType, isIncrease) {
             const ticketCount = getInputValue(ticketType);
             let ticketNewCount = ticketCount;
@@ -167,7 +163,7 @@
             const grandTotal = totalTicketsPrice + tax;
             document.getElementById('grand-total').innerText = '$' + grandTotal;
 
-            
+
         }
         function getInputValue(ticketType) {
             const ticketInput = document.getElementById(ticketType + '-count');
