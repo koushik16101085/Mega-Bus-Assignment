@@ -117,15 +117,21 @@
                     </div>
                 </div>
             </div>
-            <button id="submit-area" onclick="alert('Your Ticket Is Confirmed')" class="btn-style">Book Now</button>
+            <button  onclick="alertMessageHandle()"  class="btn-style">Book Now</button>
         </div>
     </main>
 
     <script>
-        function handleSubmitArea(alert) {
+        function alertMessageHandle() {
+            const FirstClassTicketCount = getInputValue('FirstClassTicket');
+            const economyTicketCount = getInputValue('economyTicket');
+            let ticketCount = FirstClassTicketCount + economyTicketCount;
+            document.getElementById('submit-area').value = alert (('Welcome To Your Ticket Confirmed  && Your Ticket Value: ') + ticketCount);
 
-
+            
         }
+        
+        
         function handleTicketCost(ticketType, isIncrease) {
             const ticketCount = getInputValue(ticketType);
             let ticketNewCount = ticketCount;
@@ -160,6 +166,8 @@
             document.getElementById('tax-amount').innerText = '$' + tax;
             const grandTotal = totalTicketsPrice + tax;
             document.getElementById('grand-total').innerText = '$' + grandTotal;
+
+            
         }
         function getInputValue(ticketType) {
             const ticketInput = document.getElementById(ticketType + '-count');
